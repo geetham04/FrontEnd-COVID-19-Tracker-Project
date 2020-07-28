@@ -9,7 +9,7 @@ const CountryPicker = ({ dealCountryChange }) => {
 
     useEffect(() => {
         const fetchCountriesAPI = async () => {
-            
+            // fetching countries from the API
             setFetchedCountries(await fetchCountries());
         }
         fetchCountriesAPI();

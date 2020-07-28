@@ -1,4 +1,4 @@
-
+// importing libraries, components, styles and Image
 import React from 'react';
 
 import { Cards, Chart, CountryPicker } from './components';
@@ -8,9 +8,9 @@ import { fetchData } from './api';
 import covidImage from './images/covidlogo.png';
 
 
-
 // creating class based component
 class App extends React.Component {
+    // Initial States
     state = {
         data: {},
         country: ''
