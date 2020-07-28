@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+h1{
+    color: #044d4db3;
+}
+
 .image {
     width: 370px;
     margin-top: 50px;
