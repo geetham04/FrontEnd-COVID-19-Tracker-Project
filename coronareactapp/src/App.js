@@ -1,7 +1,7 @@
 // importing libraries, components, styles and Image
 import React from 'react';
 
-import { Cards, Chart, CountryPicker } from './components';
+import { Cards, Chart, CountryPicker, Header, Footer } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
 
@@ -37,14 +37,12 @@ class App extends React.Component {
         const { data, country } = this.state;
         return (
             <div className={styles.container}>
-                {
-                hour>=12 ? hour>=16 ? 
-                <h1>Good Evening, Welcome to Coronavirus tracking application</h1> : <h1>Good Afternoon, Welcome to Coronavirus tracking application</h1> : <h1>Good Morning, Welcome to Coronavirus tracking application</h1>
-                }
+                <Header />
                 <img className={styles.image} src={covidImage} alt="COVID-19" />
                 <Cards data={data} />
                 <CountryPicker dealCountryChange={this.dealCountryChange} />
                 <Chart data={data} country={country} />
+                <Footer />
             </div>
         );
     }
