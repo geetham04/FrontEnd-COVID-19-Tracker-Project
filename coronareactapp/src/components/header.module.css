@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2{
+    color: #044d4db3;
+    font-weight: bolder;
+}
+
+header {
+    background-color: #044d4db3;
+    /*margin: auto -16px;*/
+    padding: 2px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  header h2 {
+    color: #fff;
+    /*font-family: "McLaren", cursive;*/
+    font-weight: 200;
+  }
