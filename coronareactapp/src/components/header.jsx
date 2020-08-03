@@ -1,18 +1,21 @@
 import React from "react";
+import Timer from './timer';
 import styles from './header.module.css';
+//import HighlightIcon from "@material-ui/icons/Highlight";
 
 function Header() {
-    const date = new Date();
-    const hour = date.getHours();
   return (
-    <header className={styles.container}>
-      <h2>{
-                hour>=12 ? hour>=16 ? 
-                <h2>Good Evening, Welcome to Coronavirus tracking application</h2> : <h2>Good Afternoon, Welcome to Coronavirus tracking application</h2> : <h2>Good Morning, Welcome to Coronavirus tracking application</h2>
-          }
-      </h2>
+    
+    <nav className={styles.container}> 
+    <header class="redtopbanner text-right mx-xl-5 d-flex align-items-center justify-content-end">
+      <h3>
+      <Timer />
+      </h3>
     </header>
+    </nav> 
   );
 }
 
 export default Header;
+
+

@@ -1,24 +1,22 @@
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+body {
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  padding: 0 16px;
 }
 
-h2{
-    color: #044d4db3;
-    font-weight: bolder;
+.container {
+  background-image: linear-gradient(to right, rgb(116, 221, 207) 20%, white);
+  margin: auto -16px;
+  padding: 0 45%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: inline;
+  justify-content: end;
 }
 
-header {
-    background-color: #044d4db3;
-    /*margin: auto -16px;*/
-    padding: 2px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-  }
-  
-  header h2 {
-    color: #fff;
-    /*font-family: "McLaren", cursive;*/
-    font-weight: 200;
-  }
+
+h3 {
+  color: #fff;
+  display: inline;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
