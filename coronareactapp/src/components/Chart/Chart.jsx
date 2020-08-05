@@ -42,10 +42,14 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     const barChart = (
         confirmed
           ? (
-            <div className="sub chart-wrapper">
+            <div id="chart-wrapper">
               <Bar
                 data={{
-                  labels: ['Infected', 'Recovered', 'Deaths'],
+                  labels: [
+                    'Infected',
+                    'Recovered', 
+                    'Deaths'
+                    ],
                   datasets: [{
                     label: 'people',
                     backgroundColor: [
@@ -53,14 +57,16 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                        'rgba(0, 96, 96, 0.7)',
                        'rgba(255, 0, 0, 0.7)'
                     ],
-                    data:[confirmed.value, recovered.value, deaths.value]  
+                    data:[
+                      confirmed.value, 
+                      recovered.value, 
+                      deaths.value
+                      ]  
                   }]
-
                 }}
                 options={{
                   legend: { display: false }, 
-                  title: { display: true, text:`Currently showing ${country} country` },
-              
+                  title: { display: true, text:`${country} country data in bar chart` },
                 }}
              />
              </div>
@@ -68,12 +74,49 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     )
 
     const pieChart = (
+        confirmed
+          ? (
+            <div id="chart-wrapper">
+              <Pie
+                data={{
+                  labels: [
+                    'Infected',
+                    'Recovered', 
+                    'Deaths'
+                    ],
+                  datasets: [{
+                    label: 'people',
+                    backgroundColor: [
+                       'rgba(0, 0, 255, 0.7)',
+                       'rgba(0, 96, 96, 0.7)',
+                       'rgba(255, 0, 0, 0.7)'
+                    ],
+                    data:[
+                      confirmed.value, 
+                      recovered.value, 
+                      deaths.value
+                      ]  
+                  }]
+                }}
+                options={{
+                  legend: { display: false }, 
+                  title: { display: true, text:`${country} country data in pie chart` },
+                }}
+             />
+             </div>
+          ) : null
+    )
+    const doughnutChart = (
       confirmed
         ? (
-          <div className="sub chart-wrapper">
-            <Pie
+          <div id="chart-wrapper">
+            <Doughnut
               data={{
-                labels: ['Infected', 'Recovered', 'Deaths'],
+                labels: [
+                  'Infected',
+                  'Recovered', 
+                  'Deaths'
+                  ],
                 datasets: [{
                   label: 'people',
                   backgroundColor: [
@@ -81,51 +124,32 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                      'rgba(0, 96, 96, 0.7)',
                      'rgba(255, 0, 0, 0.7)'
                   ],
-                  data:[confirmed.value, recovered.value, deaths.value]  
+                  data:[
+                    confirmed.value, 
+                    recovered.value, 
+                    deaths.value
+                    ]  
                 }]
-
               }}
               options={{
                 legend: { display: false }, 
-                title: { display: true, text:`Currently showing ${country} country` }
+                title: { display: true, text:`${country} country data in doughnut chart` },
               }}
-           /></div>
+           />
+           </div>
         ) : null
   )
-  const doughnutChart = (
-    confirmed
-      ? (
-        <div className="sub chart-wrapper">
-          <Doughnut
-            data={{
-              labels: ['Infected', 'Recovered', 'Deaths'],
-              datasets: [{
-                label: 'people',
-                backgroundColor: [
-                   'rgba(0, 0, 255, 0.7)',
-                   'rgba(0, 96, 96, 0.7)',
-                   'rgba(255, 0, 0, 0.7)'
-                ],
-                data:[confirmed.value, recovered.value, deaths.value]  
-              }]
-
-            }}
-            options={{
-              legend: { display: false }, 
-              title: { display: true, text:`Currently showing ${country} country` }
-            }}
-         />
-         </div>
-      ) : null
-)
-
 const polarChart = (
   confirmed
     ? (
-      <div className="sub chart-wrapper">
+      // <div className="chart">
         <Polar
           data={{
-            labels: ['Infected', 'Recovered', 'Deaths'],
+            labels: [
+              'Infected',
+              'Recovered', 
+              'Deaths'
+              ],
             datasets: [{
               label: 'people',
               backgroundColor: [
@@ -133,25 +157,36 @@ const polarChart = (
                  'rgba(0, 96, 96, 0.7)',
                  'rgba(255, 0, 0, 0.7)'
               ],
-              data:[confirmed.value, recovered.value, deaths.value]  
+              data:[
+                confirmed.value, 
+                recovered.value, 
+                deaths.value
+                ]  
             }]
-
           }}
+          width={"30%"}
+          // height={50}
           options={{
+            maintainAspectRatio: false,
             legend: { display: false }, 
             title: { display: true, text:`Currently showing ${country} country` }
           }}
-       /></div>
+       />
+      //  </div>
     ) : null
 )
 
 const columnChart = (
   confirmed
     ? (
-      <div className="sub chart-wrapper">
+      <div className="chart">
         <Polar
           data={{
-            labels: ['Infected', 'Recovered', 'Deaths'],
+            labels: [
+              'Infected', 
+              'Recovered', 
+              'Deaths'
+              ],
             datasets: [{
               label: 'people',
               backgroundColor: [
@@ -159,9 +194,12 @@ const columnChart = (
                  'rgba(0, 96, 96, 0.7)',
                  'rgba(255, 0, 0, 0.7)'
               ],
-              data:[confirmed.value, recovered.value, deaths.value]  
+              data:[
+                confirmed.value, 
+                recovered.value, 
+                deaths.value
+                ]  
             }]
-
           }}
           options={{
             legend: { display: false }, 
@@ -170,7 +208,6 @@ const columnChart = (
        /></div>
     ) : null
 )
-
   // const mulcharts = [barChart, pieChart, doughnutChart, polarChart]; 
 
     return (
@@ -179,6 +216,5 @@ const columnChart = (
         </div>       
     )
   }
-
 
 export default Chart;
