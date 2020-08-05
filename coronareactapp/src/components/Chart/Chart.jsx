@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line, Bar, Pie, Doughnut, Polar } from 'react-chartjs-2';
 import styles from './Chart.module.css';
 
 // functional component
@@ -13,6 +13,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
         
         fetchAPI();
     }, []);
+// eslint-disable-next-line no-unused-expressions
 
     const lineChart = (
         dailyData.length
@@ -41,6 +42,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     const barChart = (
         confirmed
           ? (
+            <div className="sub chart-wrapper">
               <Bar
                 data={{
                   labels: ['Infected', 'Recovered', 'Deaths'],
@@ -57,16 +59,126 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 }}
                 options={{
                   legend: { display: false }, 
-                  title: { display: true, text:`Currently showing ${country} country` }
+                  title: { display: true, text:`Currently showing ${country} country` },
+              
                 }}
              />
+             </div>
           ) : null
     )
+
+    const pieChart = (
+      confirmed
+        ? (
+          <div className="sub chart-wrapper">
+            <Pie
+              data={{
+                labels: ['Infected', 'Recovered', 'Deaths'],
+                datasets: [{
+                  label: 'people',
+                  backgroundColor: [
+                     'rgba(0, 0, 255, 0.7)',
+                     'rgba(0, 96, 96, 0.7)',
+                     'rgba(255, 0, 0, 0.7)'
+                  ],
+                  data:[confirmed.value, recovered.value, deaths.value]  
+                }]
+
+              }}
+              options={{
+                legend: { display: false }, 
+                title: { display: true, text:`Currently showing ${country} country` }
+              }}
+           /></div>
+        ) : null
+  )
+  const doughnutChart = (
+    confirmed
+      ? (
+        <div className="sub chart-wrapper">
+          <Doughnut
+            data={{
+              labels: ['Infected', 'Recovered', 'Deaths'],
+              datasets: [{
+                label: 'people',
+                backgroundColor: [
+                   'rgba(0, 0, 255, 0.7)',
+                   'rgba(0, 96, 96, 0.7)',
+                   'rgba(255, 0, 0, 0.7)'
+                ],
+                data:[confirmed.value, recovered.value, deaths.value]  
+              }]
+
+            }}
+            options={{
+              legend: { display: false }, 
+              title: { display: true, text:`Currently showing ${country} country` }
+            }}
+         />
+         </div>
+      ) : null
+)
+
+const polarChart = (
+  confirmed
+    ? (
+      <div className="sub chart-wrapper">
+        <Polar
+          data={{
+            labels: ['Infected', 'Recovered', 'Deaths'],
+            datasets: [{
+              label: 'people',
+              backgroundColor: [
+                 'rgba(0, 0, 255, 0.7)',
+                 'rgba(0, 96, 96, 0.7)',
+                 'rgba(255, 0, 0, 0.7)'
+              ],
+              data:[confirmed.value, recovered.value, deaths.value]  
+            }]
+
+          }}
+          options={{
+            legend: { display: false }, 
+            title: { display: true, text:`Currently showing ${country} country` }
+          }}
+       /></div>
+    ) : null
+)
+
+const columnChart = (
+  confirmed
+    ? (
+      <div className="sub chart-wrapper">
+        <Polar
+          data={{
+            labels: ['Infected', 'Recovered', 'Deaths'],
+            datasets: [{
+              label: 'people',
+              backgroundColor: [
+                 'rgba(0, 0, 255, 0.7)',
+                 'rgba(0, 96, 96, 0.7)',
+                 'rgba(255, 0, 0, 0.7)'
+              ],
+              data:[confirmed.value, recovered.value, deaths.value]  
+            }]
+
+          }}
+          options={{
+            legend: { display: false }, 
+            title: { display: true, text:`Currently showing ${country} country` }
+          }}
+       /></div>
+    ) : null
+)
+
+  // const mulcharts = [barChart, pieChart, doughnutChart, polarChart]; 
+
     return (
         <div className={styles.container}>
-          {country ? barChart : lineChart}
-        </div>
+          {country ? [barChart, pieChart, doughnutChart] : lineChart}
+        </div>       
     )
-}
+  }
+
 
 export default Chart;
