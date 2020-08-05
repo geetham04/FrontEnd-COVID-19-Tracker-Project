@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 424px){
+    .container{
+        width: 100%;
+    }
+}
