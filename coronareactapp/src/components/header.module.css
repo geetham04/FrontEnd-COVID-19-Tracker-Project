@@ -7,7 +7,7 @@ body {
 .container {
   background-image: linear-gradient(to right, rgb(116, 221, 207) 20%, white);
   margin: auto -16px;
-  padding: 0 45%;
+  padding: 0 350px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: inline;
   justify-content: end;
@@ -19,4 +19,16 @@ h3 {
   display: inline;
   font-family: "McLaren", cursive;
   font-weight: 200;
+}
+
+@media (max-width: 768px){
+  .container {
+      margin: auto -16px;
+      padding: 0 225px;
+
+  }
+
+  background-image {
+      width: 100%;
+  }
 }
