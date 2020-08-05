@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './timer.module.css';
 
 class Timer extends Component {
 
@@ -22,9 +23,10 @@ setInterval(()=>this.currentTime(),1000)
   render() {
 
     return (
-      <h1>
+      
+      <div className={styles.container}>
         {this.state.time.toLocaleTimeString()}
-      </h1>
+      </div>
     )
   }
 }
