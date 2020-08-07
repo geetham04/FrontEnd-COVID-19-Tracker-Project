@@ -3,7 +3,8 @@ import React from 'react';
 
 import { Cards, Chart, CountryPicker, Timer, Header, Footer } from './components';
 import styles from './App.module.css';
-import { fetchData } from './api';
+import { fetchData, fetchLastUpdate } from './api';
+import { TinyButton  as ScrollUpButton } from "react-scroll-up-button";
 
 import covidImage from './images/covidlogo.png';
 
@@ -43,10 +44,12 @@ class App extends React.Component {
                 <h1>Good Evening, Welcome to Coronavirus tracking application</h1> : <h1>Good Afternoon, Welcome to Coronavirus tracking application</h1> : <h1>Good Morning, Welcome to Coronavirus tracking application</h1>
                 }
                 <img className={styles.image} src={covidImage} alt="COVID-19" />
+                <fetchLastUpdate />
                 <Cards data={data} />
                 <CountryPicker dealCountryChange={this.dealCountryChange} />
                 <Chart data={data} country={country} />
                 <Footer />
+                <ScrollUpButton />
             </div>
         );
     }
