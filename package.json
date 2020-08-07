@@ -15,7 +15,8 @@
     "react-chartjs-2": "^2.9.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-scroll-up-button": "^1.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
