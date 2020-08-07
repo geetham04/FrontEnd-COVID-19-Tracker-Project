@@ -35,6 +35,34 @@ export const fetchDailyData = async () => {
     }
 }
 
+export const fetchDailyDataPerDay = async () => {
+    try{
+        const { data } = await axios.get(`${url}/daily`);
+        const modifiedData = data.map((dailyData) => ({
+            confirmed: dailyData.deltaConfirmed,
+            deaths: dailyData.deaths.value,
+            date: dailyData.reportDate
+        }));
+        return modifiedData;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const fetchLastUpdate = async () => {
+    try{
+        const { data } = await axios.get(`${url}`);
+        const modifiedData = data.map((dailyData) => ({
+            lastupdated: dailyData.lastUpdate,
+        }));
+        return modifiedData;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const fetchCountries = async () => {
     try {
         const { data: { countries }} = await axios.get(`${url}/countries`);
