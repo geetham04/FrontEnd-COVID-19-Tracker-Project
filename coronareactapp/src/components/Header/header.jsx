@@ -1,5 +1,5 @@
 import React from "react";
-import Timer from './timer';
+import Timer from '../Timer/timer';
 import styles from './header.module.css';
 //import HighlightIcon from "@material-ui/icons/Highlight";
 
