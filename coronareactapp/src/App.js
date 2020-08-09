@@ -39,6 +39,15 @@ class App extends React.Component {
         const date = new Date();
         const hour = date.getHours();
         const { data, country } = this.state;
+        // returns header with current time,
+        // greeting according to current time
+        // title image
+        // last updated date with time
+        // infected, recovered and deaths cases data in cards
+        // country picker dropdown
+        // charts
+        // footer
+        // scroll up button to go to page top
         return (
             <div className={styles.container}>
                 <Header />
