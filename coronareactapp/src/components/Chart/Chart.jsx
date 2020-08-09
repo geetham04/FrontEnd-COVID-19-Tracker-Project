@@ -1,3 +1,4 @@
+// importing libraries
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData, fetchDailyDataPerDay } from '../../api';
 import { Line, Bar, Pie, Doughnut, Polar } from 'react-chartjs-2';
@@ -16,7 +17,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     }, []);
 
 // eslint-disable-next-line no-unused-expressions
-
+// line chart logic for global wise daily cases growth
     const lineChart = (
         dailyData.length
           ? (
@@ -41,7 +42,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 }}
           />) : null
     );
-
+    
+    // bar chart logic for global wise daily infected cases timeline
     const BarChart = (
       dailyDataPerDay.length
         ? (
@@ -63,7 +65,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   );
 
     console.log(confirmed, recovered, deaths);
-
+    
+    // bar chart logic for displaying country specifice cases data
     const barChart = (
         confirmed
           ? (
@@ -98,6 +101,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
           ) : null
     )
 
+    // pie chart logic for displaying country specifice cases data
     const pieChart = (
         confirmed
           ? (
@@ -131,6 +135,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
              </div>
           ) : null
     )
+    
+    // doughnut chart logic for displaying country specifice cases data
     const doughnutChart = (
       confirmed
         ? (
@@ -164,6 +170,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
            </div>
         ) : null
   )
+  
+  // polar chart logic for displaying country specifice cases data  
   const polarChart = (
     confirmed
       ? (
@@ -231,7 +239,8 @@ const columnChart = (
     ) : null
 )
   // const mulcharts = [barChart, pieChart, doughnutChart, polarChart]; 
-
+    // if global is selected from country picker, display of line chart and bar chart of global cases would return
+    // if specific country is selected, display of various charts of country level cases would return
     return (
         <div className={styles.container}>
           {country ? [barChart, pieChart, doughnutChart, polarChart] : [lineChart, BarChart]}
