@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FrontEnd-CoronaVirus-Dashboard-Application/static/css/main.18dd72ae.chunk.css",
+    "main.js": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/main.196d493e.chunk.js",
+    "main.js.map": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/main.196d493e.chunk.js.map",
+    "runtime-main.js": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/runtime-main.c21b2272.js",
+    "runtime-main.js.map": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/runtime-main.c21b2272.js.map",
+    "static/js/2.9ade449f.chunk.js": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/2.9ade449f.chunk.js",
+    "static/js/2.9ade449f.chunk.js.map": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/2.9ade449f.chunk.js.map",
+    "index.html": "/FrontEnd-CoronaVirus-Dashboard-Application/index.html",
+    "precache-manifest.7f9e2ad9a0d4864d0a7b69daf069ce8c.js": "/FrontEnd-CoronaVirus-Dashboard-Application/precache-manifest.7f9e2ad9a0d4864d0a7b69daf069ce8c.js",
+    "service-worker.js": "/FrontEnd-CoronaVirus-Dashboard-Application/service-worker.js",
+    "static/css/main.18dd72ae.chunk.css.map": "/FrontEnd-CoronaVirus-Dashboard-Application/static/css/main.18dd72ae.chunk.css.map",
+    "static/js/2.9ade449f.chunk.js.LICENSE.txt": "/FrontEnd-CoronaVirus-Dashboard-Application/static/js/2.9ade449f.chunk.js.LICENSE.txt",
+    "static/media/covidlogo.png": "/FrontEnd-CoronaVirus-Dashboard-Application/static/media/covidlogo.3e403142.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c21b2272.js",
+    "static/js/2.9ade449f.chunk.js",
+    "static/css/main.18dd72ae.chunk.css",
+    "static/js/main.196d493e.chunk.js"
+  ]
+}
