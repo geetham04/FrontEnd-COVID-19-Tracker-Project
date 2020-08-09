@@ -1,6 +1,8 @@
+// importing libraries
 import React from "react";
 import styles from './footer.module.css';
 
+// Footer() function returns copyright information
 function Footer() {
   const year = new Date().getFullYear();
   return (
