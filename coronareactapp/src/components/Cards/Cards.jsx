@@ -1,3 +1,6 @@
+// import libraries
+// @material-ui/core - this helps with mobile responsiveness and also going to help without having to do - so much css. Just going to use materialUI components
+// react-countup – used for the animation while counting numbers
 import React from 'react';
 import { Card, CardContent, Typography, Grid, StylesProvider } from '@material-ui/core';
 import CountUp from 'react-countup';
@@ -9,11 +12,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if(!confirmed) {
         return 'Loading...';
     }
+// last updated date with time    
 const lastUpdated = 
       <Typography color="textPrimary" variant="caption" display="block" align='center'>
         Last Updated at {new Date(lastUpdate).toLocaleString()}
       </Typography>;    
-    
+    // returns last updated date with time and data for infected, recovered and death cases in cards
+    // countup - used for the animation while counting numbers
     return (
         <div className={styles.container}>
           {lastUpdated},
