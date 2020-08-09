@@ -16,12 +16,15 @@ class App extends React.Component {
         data: {},
         country: ''
     }
+    // componentDidMount - making a request to fetchData, which is in the API, returning the data needed
+    // once after data fetched, setting it to this.setState
     async componentDidMount() {
         const fetchedData = await fetchData();
 
         this.setState({ data: fetchedData });
     }
-
+    // Getting the country as a parameter, making the request one more time to the fetchData API.
+    // This time, with the fetchedData, it also changes the country 
     dealCountryChange = async (country) => {
         const fetchedData = await fetchData(country);
 

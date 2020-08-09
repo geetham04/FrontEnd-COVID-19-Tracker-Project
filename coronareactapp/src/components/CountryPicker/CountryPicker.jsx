@@ -16,7 +16,7 @@ const CountryPicker = ({ dealCountryChange }) => {
     }, [setFetchedCountries]);
 
     // console.log(fetchedCountries);
-
+    // Fetching the countries from API. Once the country chosen, it goes back to app.js
     return (
         <FormControl className={styles.FormControl}>
             <NativeSelect defaultValue="" onChange={(e) => dealCountryChange(e.target.value)}>
