@@ -1,3 +1,5 @@
+// Timer - logic for retrieving current time
+// import libraries
 import React, { Component } from 'react';
 import styles from './timer.module.css';
 
@@ -21,7 +23,7 @@ setInterval(()=>this.currentTime(),1000)
 
 
   render() {
-
+    // returns current time
     return (
       
       <div className={styles.container}>
