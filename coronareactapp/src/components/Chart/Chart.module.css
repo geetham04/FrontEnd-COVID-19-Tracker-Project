@@ -1,4 +1,4 @@
-// styling the display of charts
+/* styling the display of charts */
 
 .container {
   width: 80%;
@@ -23,6 +23,7 @@
   height: 180px;
 }
 
+/* media query for tablet size */ 
 @media (max-width: 768px) {
   .container {
       width: 100%;
@@ -30,6 +31,7 @@
 
 }
 
+/* media query for mobile size */
 @media (max-width: 500px) {
   .container {
       width: 135%;
