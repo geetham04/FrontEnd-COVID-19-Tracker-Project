@@ -1,8 +1,10 @@
 // importing axios - used to make API requests
 import axios from 'axios';
 
+// Covid-19 API URL
 const url = 'https://covid19.mathdro.id/api';
 
+// fetch data of specific country from the API 
 export const fetchData = async (country) => {
     let changeableUrl = url;
 
@@ -20,6 +22,7 @@ export const fetchData = async (country) => {
 
 }
 
+// fetches cumulative daily data of global wise cases of infected and deaths from the API
 export const fetchDailyData = async () => {
     try{
         const { data } = await axios.get(`${url}/daily`);
@@ -35,6 +38,7 @@ export const fetchDailyData = async () => {
     }
 }
 
+// fetches daily data of global wise cases of infected people from the API
 export const fetchDailyDataPerDay = async () => {
     try{
         const { data } = await axios.get(`${url}/daily`);
@@ -50,6 +54,7 @@ export const fetchDailyDataPerDay = async () => {
     }
 }
 
+// fetches last updated from the API
 export const fetchLastUpdate = async () => {
     try{
         const { data } = await axios.get(`${url}`);
@@ -63,6 +68,7 @@ export const fetchLastUpdate = async () => {
     }
 }
 
+// fetches all countries from the API
 export const fetchCountries = async () => {
     try {
         const { data: { countries }} = await axios.get(`${url}/countries`);
